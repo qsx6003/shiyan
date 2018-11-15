@@ -20,5 +20,4 @@ def chat(a):
         print("TL: ",tt)
     return tt
 if __name__ == "__main__":
-    chat(0)
-if  chat
+
