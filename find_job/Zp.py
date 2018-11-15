@@ -144,3 +144,4 @@ def myurl(c,z,n,a=0):                     # 获取要爬取的网页地址
 
 if __name__ == "__main__":              #测试程序的运行
     myurl(city,zw,n)
+
