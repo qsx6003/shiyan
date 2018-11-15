@@ -76,4 +76,7 @@ plt.show()
 # vfvfv
 # vrvvvvvv
 # vrvvrv
-# vrrrrrrrrv 
+# vrrrrrrrrv
+# 
+# 
+#  

@@ -1,0 +1,12 @@
+用python写一个微信
+    https://blog.csdn.net/weixin_41048363/article/details/79375519
+cmd和windows powershell的区别
+    https://blog.csdn.net/u012110719/article/details/41413995
+
+2018.11.10  任务:  弄懂装饰器  闭包
+
+http://www.w3school.com.cn/h.asp
+HTML 系列教程
+从左侧的菜单选择你需要的教程！
+
+哈哈哈哈
