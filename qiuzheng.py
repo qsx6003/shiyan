@@ -9,3 +9,5 @@ def myurl(a=0):                     # 获取要爬取的网页地址
     xx(a=0)  
 
 myurl(1)
+if var = 100:
+    print(bbb)
