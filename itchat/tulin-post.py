@@ -5,11 +5,12 @@ def get_response(msg):
     data = {
         'key'    : KEY,
         'info'   : msg,
-        'userid' : '空空',
+        'userid' : '空空',oo
     }
     
     try:
         r = requests.post(apiUrl, data=data).json()
+
         return r.get('text')
     except:
         return
