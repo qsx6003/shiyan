@@ -1,6 +1,6 @@
 #coding : UTF-8
 
-from Zp import *
+from Recruitment import *
 from socket import * 
 
 ADDR = ("0.0.0.0",8899)
