@@ -3,7 +3,7 @@ import requests
 import itchat
 from itchat.content import * 
 import time
-
+import P_face
 KEY = 'f4680211d53c427bba483137c73926ad'
 
 def get_response(msg):
@@ -32,9 +32,10 @@ def tuling_reply(msg):
         return "智能回复: "+reply or defaultReply
     else:
         msg["Text"](msg['FileName'])
+        P_face.main(msg['FileName'])
         # itchat.send('@%s@%s'%('img' if msg['Type'] == 'Picture' else 'fil', msg['FileName']), msg['FromUserName'])
-        itchat.send("@img@181109-103610.png",msg['FromUserName'])
-        return "全国最帅的男人"
+        itchat.send("@img@%s"%msg['FileName'],msg['FromUserName'])
+        return "准否?"
 # 为了让实验过程更加方便（修改程序不用多次扫码），我们使用热启动
 itchat.auto_login(hotReload = True)
 itchat.run()
