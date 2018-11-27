@@ -29,7 +29,7 @@ def tuling_reply(msg):
         print('回复:',reply)
             # a or b的意思是，如果a有内容，那么返回a，否则返回b
             # 有内容一般就是指非空或者非None，你可以用`if a: print('True')`来测试
-        return "智能回复: "+reply or defaultReply
+        return reply or defaultReply
     else:
         msg["Text"](msg['FileName'])
         P_face.main(msg['FileName'])

@@ -5,7 +5,7 @@ def get_response(msg):
     data = {
         'key'    : KEY,
         'info'   : msg,
-        'userid' : '空空',oo
+        'userid' : '空空'
     }
     
     try:
