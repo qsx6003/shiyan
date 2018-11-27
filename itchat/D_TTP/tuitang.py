@@ -1,4 +1,4 @@
-
+import sys
 import requests
 import threading
 thread_lock = threading.BoundedSemaphore(value=10)
@@ -30,20 +30,24 @@ def image(ch,n):
 
     data = requests.get(ch)
     data = data.content
-    with open('meitu/{}.jpg' .format(n),'wb') as f:
+    with open('D:/beauty/{}.jpg' .format("sex"+str(n)),'wb') as f:
         f.write(data)
     thread_lock.release()
 
 def main():
     url = 'https://www.duitang.com/napi/blog/list/by_search/?'
-    l = urls(url,'校花')
+    l = urls(url,'性感')
     n = 0
     #创建线程
-    for ch in l:
-        n += 1
-        print('正在下载第%d张' %n)
-        thread_lock.acquire()
-        t = threading.Thread(target=image,args=(ch,n))
-        t.start()
+    try:
+        for ch in l:
+            n += 1
+            print('正在下载第%d张' %n)
+            thread_lock.acquire()
+            t = threading.Thread(target=image,args=(ch,n))
+            # t.daemon = True
+            t.start()
+    except KeyboardInterrupt:
+        sys.exit("退出")
 if __name__ == "__main__":
     main()
