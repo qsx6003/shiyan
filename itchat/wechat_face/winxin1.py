@@ -22,14 +22,23 @@ def get_response(msg):
 @itchat.msg_register([TEXT,PICTURE],isGroupChat=False)
 def tuling_reply(msg):
     if msg['MsgType'] == 1:
-        print("收到:",msg['Text'])
-        defaultReply = 'I received: ' + msg['Text']
-        reply = get_response(msg['Text'])
-        time.sleep(2)
-        print('回复:',reply)
-            # a or b的意思是，如果a有内容，那么返回a，否则返回b
-            # 有内容一般就是指非空或者非None，你可以用`if a: print('True')`来测试
-        return reply or defaultReply
+        if msg['User']['NickName']=="独占" or\
+            msg['User']['NickName']=="张小航":
+
+            print("收到:",msg['Text'])
+            itchat.send("working,看到后稍后回复你",msg['FromUserName'])
+
+        # print(msg['User']['NickName'])
+        # print(type(msg['User']))
+        else:
+            print("收到:",msg['Text'])
+            defaultReply = 'I received: ' + msg['Text']
+            reply = get_response(msg['Text'])
+            time.sleep(2)
+            print('回复:',reply)
+                # a or b的意思是，如果a有内容，那么返回a，否则返回b
+                # 有内容一般就是指非空或者非None，你可以用`if a: print('True')`来测试
+            return reply or defaultReply
     else:
         msg["Text"](msg['FileName'])
         P_face.main(msg['FileName'])
