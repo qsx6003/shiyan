@@ -22,15 +22,14 @@ def get_response(msg):
 @itchat.msg_register([TEXT,PICTURE],isGroupChat=False)
 def tuling_reply(msg):
     if msg['MsgType'] == 1:
+        print(msg['User']['NickName'])
         if msg['User']['NickName']=="独占" or\
-            msg['User']['NickName']=="张小航":
+            msg['User']['NickName']=="长高。":
 
             print("收到:",msg['Text'])
             itchat.send("working,看到后稍后回复你",msg['FromUserName'])
-        if msg['User']['NickName']=="GMM":
+        elif msg['User']['NickName']=="郭萌":
             pass
-        # print(msg['User']['NickName'])
-        # print(type(msg['User']))
         else:
             print("收到:",msg['Text'])
             defaultReply = 'I received: ' + msg['Text']
