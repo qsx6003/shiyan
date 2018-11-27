@@ -27,7 +27,8 @@ def tuling_reply(msg):
 
             print("收到:",msg['Text'])
             itchat.send("working,看到后稍后回复你",msg['FromUserName'])
-
+        if msg['User']['NickName']=="GMM":
+            pass
         # print(msg['User']['NickName'])
         # print(type(msg['User']))
         else:
