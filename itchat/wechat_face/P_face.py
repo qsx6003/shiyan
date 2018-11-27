@@ -70,7 +70,7 @@ def main(img):
     url = "https://api.ai.qq.com/fcgi-bin/face/face_detectface"  # 人脸分析
     #检测给定图片（Image）中的所有人脸（Face）的位置和相应的面部属性。位置包括（x, y, w, h），面部属性包括性别（gender）, 年龄（age）, 表情（expression）, 魅力（beauty）, 眼镜（glass）和姿态（pitch，roll，yaw）   
     res = requests.post(url,params).json()
-    print(res)
+    # print(res)
     for obj in res['data']['face_list']:
         #print(obj)
         x=obj['x']
@@ -79,17 +79,17 @@ def main(img):
         h=obj['height']
         cv2.rectangle(frame,(x,y),(x+w,y+h),(255,255,255),2)
         delt=h//5
-        cv2.putText(frame,'beauty :'+str(obj['gender']), (x+w+10, y+10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
+        cv2.putText(frame,'sex :'+str(obj['gender']), (x+w+10, y+10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
         cv2.putText(frame,'age    :'+str(obj['age']), (x+w+10, y+10+delt*1), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
         cv2.putText(frame,'smile  :'+str(obj['expression']), (x+w+10, y+10+delt*2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
         cv2.putText(frame,'beauty :'+str(obj['beauty']), (x+w+10, y+10+delt*3), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
-        cv2.putText(frame,'glass   :'+str(obj['glass']), (x+w+10, y+10+delt*4), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
+        cv2.putText(frame,'glass  :'+str(obj['glass']), (x+w+10, y+10+delt*4), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
 
     # cv2.imshow('img',frame)
     cv2.imwrite(img,frame)
     cv2.waitKey(0)
 
 if __name__ == '__main__':  
-    main('181119-165715.png')
+    main('C:/Users/Administrator/Desktop/sex378.jpg')
 
 
