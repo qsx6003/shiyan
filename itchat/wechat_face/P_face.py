@@ -19,8 +19,8 @@ import numpy as np
 from urllib.parse import urlencode
 import json #用于post后得到的字符串到字典的转换
 
-app_id = '1106649312' 
-app_key = 'TwsQQv5G5c9E6FsH'
+app_id = '2110215617' 
+app_key = 'ms3fp1ICvHxpV4oi'
 
 '''
         腾讯openai鉴权签名计算步骤：（摘抄自官网）
