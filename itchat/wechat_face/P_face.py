@@ -70,7 +70,7 @@ def main(img):
     url = "https://api.ai.qq.com/fcgi-bin/face/face_detectface"  # 人脸分析
     #检测给定图片（Image）中的所有人脸（Face）的位置和相应的面部属性。位置包括（x, y, w, h），面部属性包括性别（gender）, 年龄（age）, 表情（expression）, 魅力（beauty）, 眼镜（glass）和姿态（pitch，roll，yaw）   
     res = requests.post(url,params).json()
-    # print(res)
+    print(res)
     for obj in res['data']['face_list']:
         #print(obj)
         x=obj['x']
@@ -90,6 +90,6 @@ def main(img):
     cv2.waitKey(0)
 
 if __name__ == '__main__':  
-    main('C:/Users/Administrator/Desktop/sex378.jpg')
+    main('C:/Users/Administrator/Desktop/sex235.jpg')
 
 

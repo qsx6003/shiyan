@@ -7,7 +7,7 @@ thread_lock = threading.BoundedSemaphore(value=10)
 # 传入参数得到字典
 
 def get_page(url,lib,start):
-    date = {'kw':'{}'.format(lib),'limit':1000,'start':start}
+    date = {'kw':'{}'.format(lib),'limit':100,'start':start}
     r = requests.get(url,params=date)
     return r.json()
 #解析字典的到图片地址
@@ -30,13 +30,13 @@ def image(ch,n):
 
     data = requests.get(ch)
     data = data.content
-    with open('D:/beauty/{}.jpg' .format("sex"+str(n)),'wb') as f:
+    with open('D:/beauty/{}.jpg' .format("mote"+str(n)),'wb') as f:
         f.write(data)
     thread_lock.release()
 
 def main():
     url = 'https://www.duitang.com/napi/blog/list/by_search/?'
-    l = urls(url,'性感')
+    l = urls(url,'模特')
     n = 0
     #创建线程
     try:
