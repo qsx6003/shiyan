@@ -89,7 +89,12 @@ def main(img):
     cv2.imwrite(img,frame)
     cv2.waitKey(0)
 
-if __name__ == '__main__':  
-    main('C:/Users/Administrator/Desktop/sex235.jpg')
+if __name__ == '__main__': 
+    # l = []
+    # for x in range(1,7):
+    #     l.append('C:/Users/Administrator/Desktop/%s.jpg'%8)
+    # for ch in l: 
+    #     main(ch)
+    main('C:/Users/Administrator/Desktop/%s.jpg'%9)
 
 
