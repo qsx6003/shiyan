@@ -74,7 +74,6 @@ def main(img):
     print(res['ret'],res['msg'])
     if res["ret"] is 0:
         res = res['data']['image']
-        print(res)
         img1 = base64.b64decode(res)
         with open(img,"wb") as f:
             f.write(img1)
