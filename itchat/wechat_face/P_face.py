@@ -13,7 +13,6 @@ import random
 import string
 import requests  
 import base64  
-import requests
 import cv2
 import numpy as np
 from urllib.parse import urlencode
@@ -95,6 +94,6 @@ if __name__ == '__main__':
     #     l.append('C:/Users/Administrator/Desktop/%s.jpg'%8)
     # for ch in l: 
     #     main(ch)
-    main('C:/Users/Administrator/Desktop/%s.jpg'%9)
+    main('C:/Users/Administrator/Desktop/%s.jpg'%53)
 
 

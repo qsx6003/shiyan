@@ -4,7 +4,7 @@ import itchat
 from itchat.content import * 
 import time
 import P_face
-KEY = 'f4680211d53c427bba483137c73926ad'
+KEY = 'd5f09b9ea887400185658545f3e1db39'
 
 def get_response(msg):
     apiUrl = 'http://www.tuling123.com/openapi/api'

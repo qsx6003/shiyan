@@ -26,17 +26,17 @@ def urls(url,lib):
         l1.extend(l)
     return l1
 
-def image(ch,n):
+def image(ch,n,keword):
 
     data = requests.get(ch)
     data = data.content
-    with open('D:/beauty/{}.jpg' .format("mote"+str(n)),'wb') as f:
+    with open('D:/beauty/{}.jpg' .format(keword+str(n)),'wb') as f:
         f.write(data)
     thread_lock.release()
 
-def main():
+def main(keword):
     url = 'https://www.duitang.com/napi/blog/list/by_search/?'
-    l = urls(url,'模特')
+    l = urls(url,keword)
     n = 0
     #创建线程
     try:
@@ -44,10 +44,10 @@ def main():
             n += 1
             print('正在下载第%d张' %n)
             thread_lock.acquire()
-            t = threading.Thread(target=image,args=(ch,n))
+            t = threading.Thread(target=image,args=(ch,n,keword))
             # t.daemon = True
             t.start()
     except KeyboardInterrupt:
         sys.exit("退出")
 if __name__ == "__main__":
-    main()
+    main('少女')
