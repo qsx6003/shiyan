@@ -84,7 +84,7 @@ def main(img):
         cv2.putText(frame,'beauty :'+str(obj['beauty']), (x+w+10, y+10+delt*3), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
         cv2.putText(frame,'glass  :'+str(obj['glass']), (x+w+10, y+10+delt*4), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2,cv2.LINE_8, 0)
 
-    # cv2.imshow('img',frame)
+    cv2.imshow('img',frame)
     cv2.imwrite(img,frame)
     cv2.waitKey(0)
 
