@@ -61,7 +61,7 @@ def access_api(img):
     url = 'https://api.ai.qq.com/fcgi-bin/face/face_detectface' 
     res = requests.post(url, get_params(img_encode)).json()  # 请求URL,得到json信息
     # 把信息显示到图片上
-    print(res)
+    print(res['msg'])
     if res['ret'] == 0:  # 0代表请求成功
         pil_img = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))  # 把opencv格式转换为PIL格式，方便写汉字
         draw = ImageDraw.Draw(pil_img)
