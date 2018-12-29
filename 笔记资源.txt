@@ -793,3 +793,8 @@ fields terminated by ',' optionally enclosed by '"' escaped by '"'
 lines terminated by '\r\n'
 IGNORE 1 LINES
 (ID,Name,parentId,ShortName,LevelType,CityCode,ZipCode,MergerName,Lng,Lat,Pinyin);
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+flask 和 django 模板上 可以用 ,dict.xxx 取值
+                            list.xxx 取值
