@@ -43,7 +43,8 @@ def get_params(img):
 
     sort_dict = sorted(params.items(), key=lambda item: item[0], reverse=False)  # 排序
     sort_dict.append(('app_key', 'ms3fp1ICvHxpV4oi'))  # 添加app_key
-    rawtext = urlencode(sort_dict).encode()  # URL编码
+    rawtext= urlencode(sort_dict).encode()  # URL编码
+    print(rawtext)
     sha = hashlib.md5()
     sha.update(rawtext)
     md5text = sha.hexdigest().upper()  # 计算出sign，接口鉴权
@@ -61,7 +62,7 @@ def access_api(img):
     url = 'https://api.ai.qq.com/fcgi-bin/face/face_detectface' 
     res = requests.post(url, get_params(img_encode)).json()  # 请求URL,得到json信息
     # 把信息显示到图片上
-    print(res)
+    # print(res)
     if res['ret'] == 0:  # 0代表请求成功
         pil_img = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))  # 把opencv格式转换为PIL格式，方便写汉字
         draw = ImageDraw.Draw(pil_img)
@@ -136,4 +137,4 @@ def access_api(img):
         return 'success'
     else:
         return 'fail'
-access_api('C:/Users/Administrator/Desktop/897.jpg')
+access_api('C:/Users/Administrator/Desktop/58.jpg')

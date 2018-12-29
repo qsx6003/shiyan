@@ -82,4 +82,4 @@ def main(img):
 
 
 if __name__ == '__main__': 
-    main('C:/Users/Administrator/Desktop/%s.jpg'%99)
+    main('C:/Users/Administrator/Desktop/%s.jpg'%58)
